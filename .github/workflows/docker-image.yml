@@ -17,7 +17,7 @@ jobs:
     
     - name: Build and push the Docker image to the registry
       run: |
-        docker build . --file Dockerfile --tag yonton21:$(date +%s)
+        docker build . --file Dockerfile --tag yonton21/flaskapp:$(date +%s)
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker tag yonton21:$(date +%s) yonton21:latest
-        docker push yonton21:latest
+        docker tag yonton21/flaskapp:(date +%s) yonton21/flaskapp:latest
+        docker push yonton21/flaskapp
