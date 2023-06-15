@@ -6,4 +6,4 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     name = request.args.get("name") or "World"
-    return f"Hello, {name}!"
+    return f"Hello from docker image, {name}!"
